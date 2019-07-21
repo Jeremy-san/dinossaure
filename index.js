@@ -15,7 +15,6 @@ const routes = require("./routes");
 
 app.use(bodyParser.urlencoded({ extended: true })); // parse application/x-www-form-urlencoded + // parse application/json
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false })); // parse application/x-www-form-urlencoded + // parse application/json
 
 app.use(morgan("dev"));
 app.use(morgan(":method :url :status :res[content-length] - :response-time "));
@@ -25,7 +24,9 @@ app.use(cors());
 app.get('/', (req, res) => {
     res.status(200).send('je suis a la racine /');
   })
-app.use('/dino', routes.dino)
+app.use('/dino', routes.dino);
+app.use('login', routes.login);
+app.use('user', routes.user);
 
 
 app.listen(port, (err) => {
