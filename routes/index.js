@@ -1,6 +1,6 @@
-const dino = require("./dino")
+const dinossaure = require("./dinossaure")
 const login = require("./login");
 const user = require("./user");
 
 
-module.exports = {dino, user, login};
+module.exports = {dinossaure, user, login};

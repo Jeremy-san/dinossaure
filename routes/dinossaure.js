@@ -20,18 +20,19 @@ router.put("/", (req, res) => {
     })
 })
 
-router.post('/', (req, res) => {
+router.post("/", (req, res) => {
     const createDinossaure = req.body;
   
     connection.query('INSERT INTO dinossaure SET ?', createDinossaure, (err, results) => {
       if (err) {
+        console.log('ou tu es')
         res.status(500).send('Erreur lors de la création du dinossaure');
       } else {
         res.sendStatus(200);
       }
     });
   });
-  router.delete('/', (req, res) => {
+  router.delete("/", (req, res) => {
     const id = req.body.idDinossaure;
   
     connection.query('DELETE FROM dinossaure WHERE idDinossaure = ?', [id], err => {

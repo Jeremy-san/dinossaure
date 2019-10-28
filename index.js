@@ -24,9 +24,9 @@ app.use(cors());
 app.get('/', (req, res) => {
     res.status(200).send('je suis a la racine /');
   })
-app.use('/dino', routes.dino);
-app.use('login', routes.login);
-app.use('user', routes.user);
+app.use('/dinossaure', routes.dinossaure);
+app.use('/login', routes.login);
+app.use('/user', routes.user);
 
 
 app.listen(port, (err) => {
